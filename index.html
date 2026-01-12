@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Search Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+if (!localStorage.getItem("usuario")) {
+    window.location.href = "login.html";
+}
+</script>
+
+<header>
+    
+    <input type="file" accept="image/*">
+<p>🔍 Búsqueda por imagen (próximamente)</p>
+
+    <h1>🌸 Anime Search Pro</h1>
+    <input type="text" id="searchInput" placeholder="Buscar anime...">
+    <p>
+        👤 Usuario: <span id="user"></span> |
+        <a href="favoritos.html">❤️ Favoritos</a>
+    </p>
+    <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+</header>
+
+<section class="results" id="results"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+document.getElementById("user").textContent = localStorage.getItem("usuario");
+</script>
+<head>
+    <link rel="manifest" href="manifest.json">
+</head>
+</body>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
+</script>
